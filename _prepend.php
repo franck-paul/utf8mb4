@@ -11,9 +11,11 @@
 # -- END LICENSE BLOCK ------------------------------------
 
 if (!defined('DC_RC_PATH')) { return; }
-// Public and Admin mode
+// Public, XML/RPC and Admin mode
 
 $__autoload['utf8mb4Behaviors'] = 	dirname(__FILE__).'/inc/utf8mb4.behaviors.php';
+
+$core->addBehavior('publicBeforeCommentCreate',array('utf8mb4Behaviors','publicBeforeCommentCreate'));
 
 $core->addBehavior('coreBeforeCommentCreate',array('utf8mb4Behaviors','coreBeforeComment'));
 $core->addBehavior('coreBeforeCommentUpdate',array('utf8mb4Behaviors','coreBeforeComment'));

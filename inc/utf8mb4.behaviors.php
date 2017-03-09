@@ -27,6 +27,11 @@ class utf8mb4Behaviors
 		},$src);
 	}
 
+	public static function publicBeforeCommentCreate($cur)
+	{
+		$cur->comment_content = self::doEncoding($cur->comment_content);
+	}
+
 	public static function coreBeforeComment($blog,$cur)
 	{
 		$cur->comment_content = self::doEncoding($cur->comment_content);
