@@ -1,3 +1,6 @@
+/*global $, dotclear, he */
+'use strict';
+
 $(function() {
 	$('#edit-entry').onetabload(function() {
 		if (dotclear.utf8mb4n_notes_only === '0') {

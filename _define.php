@@ -1,24 +1,26 @@
 <?php
-# -- BEGIN LICENSE BLOCK ----------------------------------
-# This file is part of typo, a plugin for Dotclear 2.
-#
-# Copyright (c) Franck Paul and contributors
-#
-# Licensed under the GPL version 2.0 license.
-# A copy of this license is available in LICENSE file or at
-# http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
-# -- END LICENSE BLOCK ------------------------------------
+/**
+ * @brief utf8mb4, a plugin for Dotclear 2
+ *
+ * @package Dotclear
+ * @subpackage Plugins
+ *
+ * @author Franck Paul
+ *
+ * @copyright Franck Paul carnet.franck.paul@gmail.com
+ * @copyright GPL-2.0 https://www.gnu.org/licenses/gpl-2.0.html
+ */
 
-if (!defined('DC_RC_PATH')) { return; }
+if (!defined('DC_RC_PATH')) {return;}
 
 $this->registerModule(
-	/* Name */				"utf8mb4",
-	/* Description*/		"UTF-8 mb4 partial support (posts/pages and comments only)",
-	/* Author */			"Franck Paul",
-	/* Version */			'0.1',
-	array(
-		/* Permissions */	'permissions' =>	'contentadmin',
-		/* Type */			'type' =>			'plugin',
-		/* Priority */		'priority' =>		99999
-	)
+    "utf8mb4",                                                   // Name
+    "UTF-8 mb4 partial support (posts/pages and comments only)", // Description
+    "Franck Paul",                                               // Author
+    '0.1',                                                       // Version
+    array(
+        'permissions' => 'contentadmin', // Permissions
+        'type'        => 'plugin',       // Type
+        'priority'    => 99999          // Priority
+    )
 );
