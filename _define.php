@@ -17,10 +17,11 @@ $this->registerModule(
     "utf8mb4",                                                   // Name
     "UTF-8 mb4 partial support (posts/pages and comments only)", // Description
     "Franck Paul",                                               // Author
-    '0.1',                                                       // Version
-    array(
-        'permissions' => 'contentadmin', // Permissions
-        'type'        => 'plugin',       // Type
-        'priority'    => 99999          // Priority
-    )
+    '0.2',                                                       // Version
+    [
+        'requires'    => [['core', '2.13']], // Dependencies
+        'permissions' => 'contentadmin',     // Permissions
+        'type'        => 'plugin',           // Type
+        'priority'    => 99999              // Priority
+    ]
 );

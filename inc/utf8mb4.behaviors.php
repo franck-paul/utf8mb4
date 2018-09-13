@@ -50,16 +50,16 @@ class utf8mb4Behaviors
         $cur->post_notes         = self::doEncoding($cur->post_notes);
     }
 
-    public static function adminPostEditor($editor = '', $context = '', array $tags = array(), $syntax = '')
+    public static function adminPostEditor($editor = '', $context = '', array $tags = [], $syntax = '')
     {
         // Cope only with Post and Page editing
-        $contexts = array('post', 'page');
+        $contexts = ['post', 'page'];
         if (!in_array($context, $contexts)) {
             return;
         }
 
         // dcLegacyEditor (wiki/markdown syntax) use original textarea (others known editors use iframe)
-        $syntaxes = array('wiki', 'markdown');
+        $syntaxes = ['wiki', 'markdown'];
         return
         '<script type="text/javascript">' .
         dcPage::jsVar('dotclear.utf8mb4n_notes_only', $editor == 'dcLegacyEditor' && in_array($syntax, $syntaxes) ? 0 : 1) .

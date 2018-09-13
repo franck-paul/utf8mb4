@@ -16,15 +16,15 @@ if (!defined('DC_RC_PATH')) {return;}
 
 $__autoload['utf8mb4Behaviors'] = dirname(__FILE__) . '/inc/utf8mb4.behaviors.php';
 
-$core->addBehavior('publicBeforeCommentCreate', array('utf8mb4Behaviors', 'publicBeforeCommentCreate'));
+$core->addBehavior('publicBeforeCommentCreate', ['utf8mb4Behaviors', 'publicBeforeCommentCreate']);
 
-$core->addBehavior('coreBeforeCommentCreate', array('utf8mb4Behaviors', 'coreBeforeComment'));
-$core->addBehavior('coreBeforeCommentUpdate', array('utf8mb4Behaviors', 'coreBeforeComment'));
+$core->addBehavior('coreBeforeCommentCreate', ['utf8mb4Behaviors', 'coreBeforeComment']);
+$core->addBehavior('coreBeforeCommentUpdate', ['utf8mb4Behaviors', 'coreBeforeComment']);
 
-$core->addBehavior('coreBeforePostCreate', array('utf8mb4Behaviors', 'coreBeforePost'));
-$core->addBehavior('coreBeforePostUpdate', array('utf8mb4Behaviors', 'coreBeforePost'));
+$core->addBehavior('coreBeforePostCreate', ['utf8mb4Behaviors', 'coreBeforePost']);
+$core->addBehavior('coreBeforePostUpdate', ['utf8mb4Behaviors', 'coreBeforePost']);
 
 if (!defined('DC_CONTEXT_ADMIN')) {return false;}
 // Admin mode only
 
-$core->addBehavior('adminPostEditor', array('utf8mb4Behaviors', 'adminPostEditor'));
+$core->addBehavior('adminPostEditor', ['utf8mb4Behaviors', 'adminPostEditor']);
