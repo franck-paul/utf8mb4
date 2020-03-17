@@ -61,9 +61,9 @@ class utf8mb4Behaviors
         // dcLegacyEditor (wiki/markdown syntax) use original textarea (others known editors use iframe)
         $syntaxes = ['wiki', 'markdown'];
         return
-        '<script type="text/javascript">' .
-        dcPage::jsVar('dotclear.utf8mb4n_notes_only', $editor == 'dcLegacyEditor' && in_array($syntax, $syntaxes) ? 0 : 1) .
-        '</script>' . "\n" .
+        dcPage::jsJson('utf8mb4', [
+            'utf8mb4n_notes_only' => $editor == 'dcLegacyEditor' && in_array($syntax, $syntaxes) ? 0 : 1
+        ]) .
         dcPage::jsLoad(dcPage::getPF('utf8mb4/js/he.js')) .
         dcPage::jsLoad(dcPage::getPF('utf8mb4/js/post.js'));
     }

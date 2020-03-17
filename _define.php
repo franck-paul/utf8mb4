@@ -19,9 +19,11 @@ $this->registerModule(
     "Franck Paul",                                               // Author
     '0.2',                                                       // Version
     [
-        'requires'    => [['core', '2.13']], // Dependencies
-        'permissions' => 'contentadmin',     // Permissions
-        'type'        => 'plugin',           // Type
-        'priority'    => 99999              // Priority
+        'requires'    => [['core', '2.16']],                       // Dependencies
+        'permissions' => 'contentadmin',                           // Permissions
+        'type'        => 'plugin',                                 // Type
+        'priority'    => 99999,                                    // Priority
+        'details'     => 'https://open-time.net/?q=utf8mb4',       // Details URL
+        'support'     => 'https://github.com/franck-paul/utf8mb4' // Support URL
     ]
 );
