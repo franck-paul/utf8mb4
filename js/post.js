@@ -4,7 +4,7 @@
 $(function() {
   Object.assign(dotclear, getData('utf8mb4'));
 
-  $('#edit-entry').onetabload(function() {
+  $('#edit-entry').on('onetabload', function() {
     if (dotclear.utf8mb4n_notes_only === 0) {
       const excerpt = $('#post_excerpt').val();
       const content = $('#post_content').val();
