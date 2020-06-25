@@ -17,10 +17,10 @@ $this->registerModule(
     "utf8mb4",                                                   // Name
     "UTF-8 mb4 partial support (posts/pages and comments only)", // Description
     "Franck Paul",                                               // Author
-    '0.2',                                                       // Version
+    '0.2.1',                                                     // Version
     [
         'requires'    => [['core', '2.16']],                       // Dependencies
-        'permissions' => 'contentadmin',                           // Permissions
+        'permissions' => 'usage,contentadmin',                     // Permissions
         'type'        => 'plugin',                                 // Type
         'priority'    => 99999,                                    // Priority
         'details'     => 'https://open-time.net/?q=utf8mb4',       // Details URL
