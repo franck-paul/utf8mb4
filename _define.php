@@ -17,9 +17,9 @@ $this->registerModule(
     "utf8mb4",                                                   // Name
     "UTF-8 mb4 partial support (posts/pages and comments only)", // Description
     "Franck Paul",                                               // Author
-    '0.2.1',                                                     // Version
+    '0.3',                                                       // Version
     [
-        'requires'    => [['core', '2.16']],                       // Dependencies
+        'requires'    => [['core', '2.17']],                       // Dependencies
         'permissions' => 'usage,contentadmin',                     // Permissions
         'type'        => 'plugin',                                 // Type
         'priority'    => 99999,                                    // Priority

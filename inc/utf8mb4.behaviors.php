@@ -50,6 +50,12 @@ class utf8mb4Behaviors
         $cur->post_notes         = self::doEncoding($cur->post_notes);
     }
 
+    public static function coreBeforeImageMetaCreate($cur)
+    {
+        $cur->media_meta = self::doEncoding($cur->media_meta);
+    }
+
+
     public static function adminPostEditor($editor = '', $context = '', array $tags = [], $syntax = '')
     {
         // Cope only with Post and Page editing

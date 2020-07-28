@@ -24,6 +24,8 @@ $core->addBehavior('coreBeforeCommentUpdate', ['utf8mb4Behaviors', 'coreBeforeCo
 $core->addBehavior('coreBeforePostCreate', ['utf8mb4Behaviors', 'coreBeforePost']);
 $core->addBehavior('coreBeforePostUpdate', ['utf8mb4Behaviors', 'coreBeforePost']);
 
+$core->addBehavior('coreBeforeImageMetaCreate', ['utf8mb4Behaviors', 'coreBeforeImageMetaCreate']);
+
 if (!defined('DC_CONTEXT_ADMIN')) {return false;}
 // Admin mode only
 
