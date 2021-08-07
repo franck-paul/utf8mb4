@@ -10,8 +10,9 @@
  * @copyright Franck Paul carnet.franck.paul@gmail.com
  * @copyright GPL-2.0 https://www.gnu.org/licenses/gpl-2.0.html
  */
-
-if (!defined('DC_RC_PATH')) {return;}
+if (!defined('DC_RC_PATH')) {
+    return;
+}
 
 class utf8mb4Behaviors
 {
@@ -55,7 +56,6 @@ class utf8mb4Behaviors
         $cur->media_meta = self::doEncoding($cur->media_meta);
     }
 
-
     public static function adminPostEditor($editor = '', $context = '', array $tags = [], $syntax = '')
     {
         // Cope only with Post and Page editing
@@ -66,6 +66,7 @@ class utf8mb4Behaviors
 
         // dcLegacyEditor (wiki/markdown syntax) use original textarea (others known editors use iframe)
         $syntaxes = ['wiki', 'markdown'];
+
         return
         dcPage::jsJson('utf8mb4', [
             'utf8mb4n_notes_only' => $editor == 'dcLegacyEditor' && in_array($syntax, $syntaxes) ? 0 : 1

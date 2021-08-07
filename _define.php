@@ -10,16 +10,17 @@
  * @copyright Franck Paul carnet.franck.paul@gmail.com
  * @copyright GPL-2.0 https://www.gnu.org/licenses/gpl-2.0.html
  */
-
-if (!defined('DC_RC_PATH')) {return;}
+if (!defined('DC_RC_PATH')) {
+    return;
+}
 
 $this->registerModule(
-    "utf8mb4",                                                   // Name
-    "UTF-8 mb4 partial support (posts/pages and comments only)", // Description
-    "Franck Paul",                                               // Author
-    '0.3',                                                       // Version
+    'utf8mb4',                                                   // Name
+    'UTF-8 mb4 partial support (posts/pages and comments only)', // Description
+    'Franck Paul',                                               // Author
+    '0.4',                                                       // Version
     [
-        'requires'    => [['core', '2.17']],                       // Dependencies
+        'requires'    => [['core', '2.19']],                       // Dependencies
         'permissions' => 'usage,contentadmin',                     // Permissions
         'type'        => 'plugin',                                 // Type
         'priority'    => 99999,                                    // Priority
