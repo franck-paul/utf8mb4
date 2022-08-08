@@ -18,15 +18,15 @@ $this->registerModule(
     'utf8mb4',                                                   // Name
     'UTF-8 mb4 partial support (posts/pages and comments only)', // Description
     'Franck Paul',                                               // Author
-    '0.4',                                                       // Version
+    '0.5',                                                       // Version
     [
-        'requires'    => [['core', '2.19']],                       // Dependencies
+        'requires'    => [['core', '2.23']],                       // Dependencies
         'permissions' => 'usage,contentadmin',                     // Permissions
         'type'        => 'plugin',                                 // Type
         'priority'    => 99999,                                    // Priority
 
         'details'    => 'https://open-time.net/?q=utf8mb4',       // Details URL
         'support'    => 'https://github.com/franck-paul/utf8mb4', // Support URL
-        'repository' => 'https://raw.githubusercontent.com/franck-paul/utf8mb4/master/dcstore.xml'
+        'repository' => 'https://raw.githubusercontent.com/franck-paul/utf8mb4/master/dcstore.xml',
     ]
 );

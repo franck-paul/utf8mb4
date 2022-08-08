@@ -19,18 +19,16 @@ class utf8mb4Behaviors
     private static function doEncoding($src)
     {
         // Replace 4 bytes long UTF-8 characters to their HTML entity equivalent
-        return empty($src) ? $src : preg_replace_callback('/./u', function (array $match) {
-            return strlen($match[0]) >= 4 ? mb_convert_encoding($match[0], 'HTML-ENTITIES', 'UTF-8') : $match[0];
-        }, $src);
+        return empty($src) ? $src : preg_replace_callback('/./u', fn (array $match) => strlen($match[0]) >= 4 ? mb_convert_encoding($match[0], 'HTML-ENTITIES', 'UTF-8') : $match[0], $src);
     }
 
+    /* Unused
     private static function doDecoding($src)
     {
         // Replace HTML entity (Unicode chars only) to their UTF-8 characters
-        return empty($src) ? $src : preg_replace_callback('/(&#[0-9]+;)/', function (array $match) {
-            return mb_convert_encoding($match[1], 'UTF-8', 'HTML-ENTITIES');
-        }, $src);
+        return empty($src) ? $src : preg_replace_callback('/(&#[0-9]+;)/', fn (array $match) => mb_convert_encoding($match[1], 'UTF-8', 'HTML-ENTITIES'), $src);
     }
+    */
 
     public static function publicBeforeCommentCreate($cur)
     {
@@ -69,9 +67,9 @@ class utf8mb4Behaviors
 
         return
         dcPage::jsJson('utf8mb4', [
-            'utf8mb4n_notes_only' => $editor == 'dcLegacyEditor' && in_array($syntax, $syntaxes) ? 0 : 1
+            'utf8mb4n_notes_only' => $editor == 'dcLegacyEditor' && in_array($syntax, $syntaxes) ? 0 : 1,
         ]) .
-        dcPage::jsLoad(dcPage::getPF('utf8mb4/js/he.js')) .
-        dcPage::jsLoad(dcPage::getPF('utf8mb4/js/post.js'));
+        dcPage::jsModuleLoad('utf8mb4/js/he.js') .
+        dcPage::jsModuleLoad('utf8mb4/js/post.js');
     }
 }
