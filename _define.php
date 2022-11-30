@@ -15,18 +15,21 @@ if (!defined('DC_RC_PATH')) {
 }
 
 $this->registerModule(
-    'utf8mb4',                                                   // Name
-    'UTF-8 mb4 partial support (posts/pages and comments only)', // Description
-    'Franck Paul',                                               // Author
-    '0.5',                                                       // Version
+    'utf8mb4',
+    'UTF-8 mb4 partial support (posts/pages and comments only)',
+    'Franck Paul',
+    '1.0',
     [
-        'requires'    => [['core', '2.23']],                       // Dependencies
-        'permissions' => 'usage,contentadmin',                     // Permissions
-        'type'        => 'plugin',                                 // Type
-        'priority'    => 99999,                                    // Priority
+        'requires'    => [['core', '2.24']],
+        'permissions' => dcCore::app()->auth->makePermissions([
+            dcAuth::PERMISSION_USAGE,
+            dcAuth::PERMISSION_CONTENT_ADMIN,
+        ]),
+        'type'     => 'plugin',
+        'priority' => 99999,
 
-        'details'    => 'https://open-time.net/?q=utf8mb4',       // Details URL
-        'support'    => 'https://github.com/franck-paul/utf8mb4', // Support URL
+        'details'    => 'https://open-time.net/?q=utf8mb4',
+        'support'    => 'https://github.com/franck-paul/utf8mb4',
         'repository' => 'https://raw.githubusercontent.com/franck-paul/utf8mb4/master/dcstore.xml',
     ]
 );

@@ -15,21 +15,21 @@ if (!defined('DC_RC_PATH')) {
 }
 // Public, XML/RPC and Admin mode
 
-$__autoload['utf8mb4Behaviors'] = __DIR__ . '/inc/utf8mb4.behaviors.php';
+Clearbricks::lib()->autoload(['utf8mb4Behaviors' => __DIR__ . '/inc/utf8mb4.behaviors.php']);
 
-dcCore::app()->addBehavior('publicBeforeCommentCreate', ['utf8mb4Behaviors', 'publicBeforeCommentCreate']);
+dcCore::app()->addBehavior('publicBeforeCommentCreate', [utf8mb4Behaviors::class, 'publicBeforeCommentCreate']);
 
-dcCore::app()->addBehavior('coreBeforeCommentCreate', ['utf8mb4Behaviors', 'coreBeforeComment']);
-dcCore::app()->addBehavior('coreBeforeCommentUpdate', ['utf8mb4Behaviors', 'coreBeforeComment']);
+dcCore::app()->addBehavior('coreBeforeCommentCreate', [utf8mb4Behaviors::class, 'coreBeforeComment']);
+dcCore::app()->addBehavior('coreBeforeCommentUpdate', [utf8mb4Behaviors::class, 'coreBeforeComment']);
 
-dcCore::app()->addBehavior('coreBeforePostCreate', ['utf8mb4Behaviors', 'coreBeforePost']);
-dcCore::app()->addBehavior('coreBeforePostUpdate', ['utf8mb4Behaviors', 'coreBeforePost']);
+dcCore::app()->addBehavior('coreBeforePostCreate', [utf8mb4Behaviors::class, 'coreBeforePost']);
+dcCore::app()->addBehavior('coreBeforePostUpdate', [utf8mb4Behaviors::class, 'coreBeforePost']);
 
-dcCore::app()->addBehavior('coreBeforeImageMetaCreate', ['utf8mb4Behaviors', 'coreBeforeImageMetaCreate']);
+dcCore::app()->addBehavior('coreBeforeImageMetaCreate', [utf8mb4Behaviors::class, 'coreBeforeImageMetaCreate']);
 
 if (!defined('DC_CONTEXT_ADMIN')) {
     return false;
 }
 // Admin mode only
 
-dcCore::app()->addBehavior('adminPostEditor', ['utf8mb4Behaviors', 'adminPostEditor']);
+dcCore::app()->addBehavior('adminPostEditor', [utf8mb4Behaviors::class, 'adminPostEditor']);

@@ -10,10 +10,6 @@
  * @copyright Franck Paul carnet.franck.paul@gmail.com
  * @copyright GPL-2.0 https://www.gnu.org/licenses/gpl-2.0.html
  */
-if (!defined('DC_RC_PATH')) {
-    return;
-}
-
 class utf8mb4Behaviors
 {
     private static function doEncoding($src)
@@ -54,12 +50,12 @@ class utf8mb4Behaviors
         $cur->media_meta = self::doEncoding($cur->media_meta);
     }
 
-    public static function adminPostEditor($editor = '', $context = '', array $tags = [], $syntax = '')
+    public static function adminPostEditor($editor = '', $context = '', array $tags = [], $syntax = ''): string
     {
         // Cope only with Post and Page editing
         $contexts = ['post', 'page'];
         if (!in_array($context, $contexts)) {
-            return;
+            return '';
         }
 
         // dcLegacyEditor (wiki/markdown syntax) use original textarea (others known editors use iframe)
