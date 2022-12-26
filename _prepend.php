@@ -17,15 +17,17 @@ if (!defined('DC_RC_PATH')) {
 
 Clearbricks::lib()->autoload(['utf8mb4Behaviors' => __DIR__ . '/inc/utf8mb4.behaviors.php']);
 
-dcCore::app()->addBehavior('publicBeforeCommentCreate', [utf8mb4Behaviors::class, 'publicBeforeCommentCreate']);
+dcCore::app()->addBehaviors([
+    'publicBeforeCommentCreate' => [utf8mb4Behaviors::class, 'publicBeforeCommentCreate'],
 
-dcCore::app()->addBehavior('coreBeforeCommentCreate', [utf8mb4Behaviors::class, 'coreBeforeComment']);
-dcCore::app()->addBehavior('coreBeforeCommentUpdate', [utf8mb4Behaviors::class, 'coreBeforeComment']);
+    'coreBeforeCommentCreate'   => [utf8mb4Behaviors::class, 'coreBeforeComment'],
+    'coreBeforeCommentUpdate'   => [utf8mb4Behaviors::class, 'coreBeforeComment'],
 
-dcCore::app()->addBehavior('coreBeforePostCreate', [utf8mb4Behaviors::class, 'coreBeforePost']);
-dcCore::app()->addBehavior('coreBeforePostUpdate', [utf8mb4Behaviors::class, 'coreBeforePost']);
+    'coreBeforePostCreate'      => [utf8mb4Behaviors::class, 'coreBeforePost'],
+    'coreBeforePostUpdate'      => [utf8mb4Behaviors::class, 'coreBeforePost'],
 
-dcCore::app()->addBehavior('coreBeforeImageMetaCreate', [utf8mb4Behaviors::class, 'coreBeforeImageMetaCreate']);
+    'coreBeforeImageMetaCreate' => [utf8mb4Behaviors::class, 'coreBeforeImageMetaCreate'],
+]);
 
 if (!defined('DC_CONTEXT_ADMIN')) {
     return false;
