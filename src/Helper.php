@@ -16,17 +16,32 @@ namespace Dotclear\Plugin\utf8mb4;
 
 class Helper
 {
-    public static function doEncoding($src)
+    public static function doEncoding($src): string
     {
         // Replace 4 bytes long UTF-8 characters to their HTML entity equivalent
-        return empty($src) ? $src : preg_replace_callback('/./u', fn (array $match) => strlen($match[0]) >= 4 ? (string) mb_convert_encoding($match[0], 'HTML-ENTITIES', 'UTF-8') : $match[0], (string) $src);
-    }
+        if (empty($src)) {
+            return $src;
+        }
 
-    /* Unused
-    private static function doDecoding($src)
-    {
-        // Replace HTML entity (Unicode chars only) to their UTF-8 characters
-        return empty($src) ? $src : preg_replace_callback('/(&#[0-9]+;)/', fn (array $match) => mb_convert_encoding($match[1], 'UTF-8', 'HTML-ENTITIES'), (string) $src);
+        $ret = preg_replace_callback(
+            '/./u',
+            function (array $match) {
+                $char = $match[0];
+                $len  = strlen($char);
+                if ($len >= 4) {
+                    // Note: (string) mb_convert_encoding($match[0], 'HTML-ENTITIES', 'UTF-8'); -> Throw error with PHP 8.2:
+                    //
+                    // mb_convert_encoding(): Handling HTML entities via mbstring is deprecated; use htmlspecialchars, htmlentities, or
+                    // mb_encode_numericentity/mb_decode_numericentity instead
+
+                    $char = mb_encode_numericentity($char, [0x80, 0x10FFFF, 0, ~0], 'UTF-8');
+                }
+
+                return $char;
+            },
+            (string) $src
+        );
+
+        return $ret;
     }
-    */
 }

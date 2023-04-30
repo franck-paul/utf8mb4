@@ -14,21 +14,23 @@ declare(strict_types=1);
 
 namespace Dotclear\Plugin\utf8mb4;
 
+use dcBlog;
 use dcPage;
+use Dotclear\Database\Cursor;
 
 class CoreBehaviors
 {
-    public static function publicBeforeCommentCreate($cur)
+    public static function publicBeforeCommentCreate(Cursor $cur)
     {
         $cur->comment_content = Helper::doEncoding($cur->comment_content);
     }
 
-    public static function coreBeforeComment($blog, $cur)
+    public static function coreBeforeComment(dcBlog $blog, Cursor $cur)
     {
         $cur->comment_content = Helper::doEncoding($cur->comment_content);
     }
 
-    public static function coreBeforePost($blog, $cur)
+    public static function coreBeforePost(dcBlog $blog, Cursor $cur)
     {
         $cur->post_excerpt       = Helper::doEncoding($cur->post_excerpt);
         $cur->post_excerpt_xhtml = Helper::doEncoding($cur->post_excerpt_xhtml);
@@ -37,12 +39,12 @@ class CoreBehaviors
         $cur->post_notes         = Helper::doEncoding($cur->post_notes);
     }
 
-    public static function coreBeforeImageMetaCreate($cur)
+    public static function coreBeforeImageMetaCreate(Cursor $cur)
     {
         $cur->media_meta = Helper::doEncoding($cur->media_meta);
     }
 
-    public static function adminPostEditor($editor = '', $context = '', array $tags = [], $syntax = ''): string
+    public static function adminPostEditor(string $editor = '', string $context = '', array $tags = [], string $syntax = ''): string
     {
         // Cope only with Post and Page editing
         $contexts = ['post', 'page'];

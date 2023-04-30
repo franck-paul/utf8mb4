@@ -33,7 +33,7 @@ class Backend extends dcNsProcess
         }
 
         dcCore::app()->addBehaviors([
-            'adminPostEditor', [BackendBehaviors::class, 'adminPostEditor'],
+            'adminPostEditor' => [BackendBehaviors::class, 'adminPostEditor'],
         ]);
 
         return true;
