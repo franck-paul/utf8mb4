@@ -15,7 +15,6 @@ declare(strict_types=1);
 namespace Dotclear\Plugin\utf8mb4;
 
 use dcBlog;
-use dcPage;
 use Dotclear\Database\Cursor;
 
 class CoreBehaviors
@@ -42,24 +41,5 @@ class CoreBehaviors
     public static function coreBeforeImageMetaCreate(Cursor $cur)
     {
         $cur->media_meta = Helper::doEncoding($cur->media_meta);
-    }
-
-    public static function adminPostEditor(string $editor = '', string $context = '', array $tags = [], string $syntax = ''): string
-    {
-        // Cope only with Post and Page editing
-        $contexts = ['post', 'page'];
-        if (!in_array($context, $contexts)) {
-            return '';
-        }
-
-        // dcLegacyEditor (wiki/markdown syntax) use original textarea (others known editors use iframe)
-        $syntaxes = ['wiki', 'markdown'];
-
-        return
-        dcPage::jsJson('utf8mb4', [
-            'utf8mb4n_notes_only' => $editor == 'dcLegacyEditor' && in_array($syntax, $syntaxes) ? 0 : 1,
-        ]) .
-        dcPage::jsModuleLoad('utf8mb4/js/he.js') .
-        dcPage::jsModuleLoad('utf8mb4/js/post.js');
     }
 }

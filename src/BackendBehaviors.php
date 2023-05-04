@@ -18,7 +18,7 @@ use dcPage;
 
 class BackendBehaviors
 {
-    public static function adminPostEditor($editor = '', $context = '', array $tags = [], $syntax = ''): string
+    public static function adminPostEditor(string $editor = '', string $context = '', array $tags = [], $syntax = ''): string
     {
         // Cope only with Post and Page editing
         $contexts = ['post', 'page'];
@@ -33,7 +33,7 @@ class BackendBehaviors
         dcPage::jsJson('utf8mb4', [
             'utf8mb4n_notes_only' => $editor == 'dcLegacyEditor' && in_array($syntax, $syntaxes) ? 0 : 1,
         ]) .
-        dcPage::jsModuleLoad('utf8mb4/js/he.js') .
-        dcPage::jsModuleLoad('utf8mb4/js/post.js');
+        dcPage::jsModuleLoad(My::id() . '/js/he.js') .
+        dcPage::jsModuleLoad(My::id() . '/js/post.js');
     }
 }
