@@ -1,4 +1,4 @@
-Contenu de test
+# utf8mb4
 
 [![Release](https://img.shields.io/github/v/release/franck-paul/utf8mb4)](https://github.com/franck-paul/utf8mb4/releases)
 [![Date](https://img.shields.io/github/release-date/franck-paul/utf8mb4)](https://github.com/franck-paul/utf8mb4/releases)
@@ -8,8 +8,7 @@ Contenu de test
 
 ===============
 
-Visuel
-------
+## Visuel
 
 ```
 destinataire…
@@ -19,8 +18,7 @@ un emoji qui va bien → Coupable identifié : j’avais terminé mon message pa
 toto → 😊 truc → 💩 chose, Et Typo << gloups 😊 — hop 💩 — 😊 >>
 ```
 
-Source
-------
+## Source
 
 ```html
 <p>destinataire…</p>
