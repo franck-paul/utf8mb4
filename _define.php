@@ -14,7 +14,7 @@ $this->registerModule(
     'utf8mb4',
     'UTF-8 mb4 partial support (posts/pages and comments only)',
     'Franck Paul',
-    '2.2',
+    '2.3',
     [
         'requires'    => [['core', '2.26']],
         'permissions' => dcCore::app()->auth->makePermissions([
