@@ -20,7 +20,7 @@ class Helper
     {
         // Replace 4 bytes long UTF-8 characters to their HTML entity equivalent
         if (empty($src)) {
-            return $src;
+            return (string) $src;
         }
 
         $ret = preg_replace_callback(
