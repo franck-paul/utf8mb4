@@ -14,7 +14,7 @@ declare(strict_types=1);
 
 namespace Dotclear\Plugin\utf8mb4;
 
-use dcPage;
+use Dotclear\Core\Backend\Page;
 
 class BackendBehaviors
 {
@@ -30,10 +30,10 @@ class BackendBehaviors
         $syntaxes = ['wiki', 'markdown'];
 
         return
-        dcPage::jsJson('utf8mb4', [
+        Page::jsJson('utf8mb4', [
             'utf8mb4n_notes_only' => $editor == 'dcLegacyEditor' && in_array($syntax, $syntaxes) ? 0 : 1,
         ]) .
-        dcPage::jsModuleLoad(My::id() . '/js/he.js') .
-        dcPage::jsModuleLoad(My::id() . '/js/post.js');
+        My::jsLoad('he.js') .
+        My::jsLoad('post.js');
     }
 }
