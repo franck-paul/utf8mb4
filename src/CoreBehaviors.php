@@ -19,27 +19,35 @@ use Dotclear\Database\Cursor;
 
 class CoreBehaviors
 {
-    public static function publicBeforeCommentCreate(Cursor $cur)
+    public static function publicBeforeCommentCreate(Cursor $cur): string
     {
         $cur->comment_content = Helper::doEncoding($cur->comment_content);
+
+        return '';
     }
 
-    public static function coreBeforeComment(dcBlog $blog, Cursor $cur)
+    public static function coreBeforeComment(dcBlog $blog, Cursor $cur): string
     {
         $cur->comment_content = Helper::doEncoding($cur->comment_content);
+
+        return '';
     }
 
-    public static function coreBeforePost(dcBlog $blog, Cursor $cur)
+    public static function coreBeforePost(dcBlog $blog, Cursor $cur): string
     {
         $cur->post_excerpt       = Helper::doEncoding($cur->post_excerpt);
         $cur->post_excerpt_xhtml = Helper::doEncoding($cur->post_excerpt_xhtml);
         $cur->post_content       = Helper::doEncoding($cur->post_content);
         $cur->post_content_xhtml = Helper::doEncoding($cur->post_content_xhtml);
         $cur->post_notes         = Helper::doEncoding($cur->post_notes);
+
+        return '';
     }
 
-    public static function coreBeforeImageMetaCreate(Cursor $cur)
+    public static function coreBeforeImageMetaCreate(Cursor $cur): string
     {
         $cur->media_meta = Helper::doEncoding($cur->media_meta);
+
+        return '';
     }
 }

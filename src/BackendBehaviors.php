@@ -18,7 +18,17 @@ use Dotclear\Core\Backend\Page;
 
 class BackendBehaviors
 {
-    public static function adminPostEditor(string $editor = '', string $context = '', array $tags = [], $syntax = ''): string
+    /**
+     * adminPostEditor behavior callback
+     *
+     * @param      string               $editor   The editor
+     * @param      string               $context  The context
+     * @param      array<string>        $tags     The tags
+     * @param      string               $syntax   The syntax
+     *
+     * @return     string
+     */
+    public static function adminPostEditor(string $editor = '', string $context = '', array $tags = [], string $syntax = ''): string
     {
         // Cope only with Post and Page editing
         $contexts = ['post', 'page'];

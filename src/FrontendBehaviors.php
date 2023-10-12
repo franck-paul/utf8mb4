@@ -14,10 +14,14 @@ declare(strict_types=1);
 
 namespace Dotclear\Plugin\utf8mb4;
 
+use Dotclear\Database\Cursor;
+
 class FrontendBehaviors
 {
-    public static function publicBeforeCommentCreate($cur)
+    public static function publicBeforeCommentCreate(Cursor $cur): string
     {
         $cur->comment_content = Helper::doEncoding($cur->comment_content);
+
+        return '';
     }
 }

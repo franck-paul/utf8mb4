@@ -16,14 +16,21 @@ namespace Dotclear\Plugin\utf8mb4;
 
 class Helper
 {
-    public static function doEncoding($src): string
+    /**
+     * Does an encoding.
+     *
+     * @param      string  $src    The source
+     *
+     * @return     string
+     */
+    public static function doEncoding(string $src): string
     {
         // Replace 4 bytes long UTF-8 characters to their HTML entity equivalent
         if (empty($src)) {
-            return (string) $src;
+            return '';
         }
 
-        $ret = preg_replace_callback(
+        $ret = (string) preg_replace_callback(
             '/./u',
             function (array $match) {
                 $char = $match[0];
