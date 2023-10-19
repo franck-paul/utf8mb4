@@ -30,7 +30,7 @@ class Helper
             return '';
         }
 
-        $ret = (string) preg_replace_callback(
+        return (string) preg_replace_callback(
             '/./u',
             function (array $match) {
                 $char = $match[0];
@@ -48,7 +48,5 @@ class Helper
             },
             (string) $src
         );
-
-        return $ret;
     }
 }
