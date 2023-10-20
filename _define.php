@@ -17,12 +17,9 @@ $this->registerModule(
     '3.0',
     [
         'requires'    => [['core', '2.28']],
-        'permissions' => dcCore::app()->auth->makePermissions([
-            dcAuth::PERMISSION_USAGE,
-            dcAuth::PERMISSION_CONTENT_ADMIN,
-        ]),
-        'type'     => 'plugin',
-        'priority' => 99999,
+        'permissions' => 'My',
+        'type'        => 'plugin',
+        'priority'    => 99999,
 
         'details'    => 'https://open-time.net/?q=utf8mb4',
         'support'    => 'https://github.com/franck-paul/utf8mb4',

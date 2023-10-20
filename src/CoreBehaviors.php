@@ -14,8 +14,8 @@ declare(strict_types=1);
 
 namespace Dotclear\Plugin\utf8mb4;
 
-use dcBlog;
 use Dotclear\Database\Cursor;
+use Dotclear\Interface\Core\BlogInterface;
 
 class CoreBehaviors
 {
@@ -26,14 +26,14 @@ class CoreBehaviors
         return '';
     }
 
-    public static function coreBeforeComment(dcBlog $blog, Cursor $cur): string
+    public static function coreBeforeComment(BlogInterface $blog, Cursor $cur): string
     {
         $cur->comment_content = Helper::doEncoding($cur->comment_content);
 
         return '';
     }
 
-    public static function coreBeforePost(dcBlog $blog, Cursor $cur): string
+    public static function coreBeforePost(BlogInterface $blog, Cursor $cur): string
     {
         $cur->post_excerpt       = Helper::doEncoding($cur->post_excerpt);
         $cur->post_excerpt_xhtml = Helper::doEncoding($cur->post_excerpt_xhtml);
