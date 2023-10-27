@@ -26,13 +26,13 @@ class Helper
     public static function doEncoding(string $src): string
     {
         // Replace 4 bytes long UTF-8 characters to their HTML entity equivalent
-        if (empty($src)) {
+        if ($src === '') {
             return '';
         }
 
         return (string) preg_replace_callback(
             '/./u',
-            function (array $match) {
+            static function (array $match) {
                 $char = $match[0];
                 $len  = strlen($char);
                 if ($len >= 4) {
@@ -43,7 +43,6 @@ class Helper
 
                     $char = mb_encode_numericentity($char, [0x80, 0x10FFFF, 0, ~0], 'UTF-8');
                 }
-
                 return $char;
             },
             (string) $src
