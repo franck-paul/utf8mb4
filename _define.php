@@ -23,6 +23,6 @@ $this->registerModule(
 
         'details'    => 'https://open-time.net/?q=utf8mb4',
         'support'    => 'https://github.com/franck-paul/utf8mb4',
-        'repository' => 'https://raw.githubusercontent.com/franck-paul/utf8mb4/master/dcstore.xml',
+        'repository' => 'https://raw.githubusercontent.com/franck-paul/utf8mb4/main/dcstore.xml',
     ]
 );
