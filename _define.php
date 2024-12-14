@@ -14,7 +14,7 @@ $this->registerModule(
     'utf8mb4',
     'UTF-8 mb4 partial support (posts/pages and comments only)',
     'Franck Paul',
-    '4.3',
+    '4.3.1',
     [
         'requires'    => [['core', '2.28']],
         'permissions' => 'My',
