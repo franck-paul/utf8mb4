@@ -1,21 +1,16 @@
-/*global $, dotclear, he */
+/*global dotclear, he */
 'use strict';
 
 dotclear.ready(() => {
   Object.assign(dotclear, dotclear.getData('utf8mb4'));
 
+  const encode = (elt) => {
+    if (elt?.value) elt.value = he.decode(elt.value);
+  };
+
   if (dotclear.utf8mb4n_notes_only === 0) {
-    const excerpt = $('#post_excerpt').val();
-    const content = $('#post_content').val();
-    if (excerpt !== undefined) {
-      $('#post_excerpt').val(he.decode(excerpt));
-    }
-    if (content !== undefined) {
-      $('#post_content').val(he.decode(content));
-    }
+    encode(document.getElementById('post_excerpt'));
+    encode(document.getElementById('post_content'));
   }
-  const notes = $('#post_notes').val();
-  if (notes !== undefined) {
-    $('#post_notes').val(he.decode(notes));
-  }
+  encode(document.getElementById('post_notes'));
 });
