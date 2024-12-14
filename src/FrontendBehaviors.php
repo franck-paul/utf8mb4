@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @brief utf8mb4, a plugin for Dotclear 2
  *
@@ -20,7 +21,7 @@ class FrontendBehaviors
 {
     public static function publicBeforeCommentCreate(Cursor $cur): string
     {
-        $cur->comment_content = Helper::doEncoding($cur->comment_content);
+        $cur->comment_content = Helper::doEncoding((string) $cur->comment_content);
 
         return '';
     }
