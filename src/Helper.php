@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @brief utf8mb4, a plugin for Dotclear 2
  *
@@ -20,8 +21,6 @@ class Helper
      * Does an encoding.
      *
      * @param      string  $src    The source
-     *
-     * @return     string
      */
     public static function doEncoding(string $src): string
     {
@@ -32,7 +31,7 @@ class Helper
 
         return (string) preg_replace_callback(
             '/./u',
-            static function (array $match) {
+            static function (array $match): string {
                 $char = $match[0];
                 $len  = strlen($char);
                 if ($len >= 4) {
@@ -43,9 +42,10 @@ class Helper
 
                     $char = mb_encode_numericentity($char, [0x80, 0x10FFFF, 0, ~0], 'UTF-8');
                 }
+
                 return $char;
             },
-            (string) $src
+            $src
         );
     }
 }

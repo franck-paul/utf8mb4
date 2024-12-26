@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @brief utf8mb4, a plugin for Dotclear 2
  *
@@ -25,8 +26,6 @@ class BackendBehaviors
      * @param      string               $context  The context
      * @param      array<string>        $tags     The tags
      * @param      string               $syntax   The syntax
-     *
-     * @return     string
      */
     public static function adminPostEditor(string $editor = '', string $context = '', array $tags = [], string $syntax = ''): string
     {
@@ -41,7 +40,7 @@ class BackendBehaviors
 
         return
         Page::jsJson('utf8mb4', [
-            'utf8mb4n_notes_only' => $editor == 'dcLegacyEditor' && in_array($syntax, $syntaxes) ? 0 : 1,
+            'utf8mb4n_notes_only' => $editor === 'dcLegacyEditor' && in_array($syntax, $syntaxes) ? 0 : 1,
         ]) .
         My::jsLoad('he.js') .
         My::jsLoad('post.js');
