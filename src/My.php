@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @brief utf8mb4, a plugin for Dotclear 2
  *

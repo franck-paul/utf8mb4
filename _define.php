@@ -18,7 +18,7 @@ $this->registerModule(
     '4.4',
     [
         'date'        => '2003-08-13T13:42:00+0100',
-        'requires'    => [['core', '2.28']],
+        'requires'    => [['core', '2.36']],
         'permissions' => 'My',
         'type'        => 'plugin',
         'priority'    => 99999,
@@ -26,5 +26,6 @@ $this->registerModule(
         'details'    => 'https://open-time.net/?q=utf8mb4',
         'support'    => 'https://github.com/franck-paul/utf8mb4',
         'repository' => 'https://raw.githubusercontent.com/franck-paul/utf8mb4/main/dcstore.xml',
+        'license'    => 'gpl2',
     ]
 );
