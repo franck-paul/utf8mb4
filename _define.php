@@ -15,9 +15,9 @@ $this->registerModule(
     'utf8mb4',
     'UTF-8 mb4 partial support (posts/pages and comments only)',
     'Franck Paul',
-    '4.4',
+    '5.0',
     [
-        'date'        => '2003-08-13T13:42:00+0100',
+        'date'        => '2025-09-07T15:41:39+0200',
         'requires'    => [['core', '2.36']],
         'permissions' => 'My',
         'type'        => 'plugin',
