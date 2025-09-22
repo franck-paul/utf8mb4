@@ -15,7 +15,7 @@ declare(strict_types=1);
 
 namespace Dotclear\Plugin\utf8mb4;
 
-use Dotclear\Core\Backend\Page;
+use Dotclear\App;
 
 class BackendBehaviors
 {
@@ -39,7 +39,7 @@ class BackendBehaviors
         $syntaxes = ['wiki', 'markdown'];
 
         return
-        Page::jsJson('utf8mb4', [
+        App::backend()->page()->jsJson('utf8mb4', [
             'utf8mb4n_notes_only' => $editor === 'dcLegacyEditor' && in_array($syntax, $syntaxes) ? 0 : 1,
         ]) .
         My::jsLoad('he.js') .
