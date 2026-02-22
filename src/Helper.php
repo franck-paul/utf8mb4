@@ -40,7 +40,7 @@ class Helper
                     // mb_convert_encoding(): Handling HTML entities via mbstring is deprecated; use htmlspecialchars, htmlentities, or
                     // mb_encode_numericentity/mb_decode_numericentity instead
 
-                    $char = mb_encode_numericentity($char, [0x80, 0x10FFFF, 0, ~0], 'UTF-8');
+                    return mb_encode_numericentity($char, [0x80, 0x10FFFF, 0, ~0], 'UTF-8');
                 }
 
                 return $char;
