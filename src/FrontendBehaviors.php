@@ -21,7 +21,9 @@ class FrontendBehaviors
 {
     public static function publicBeforeCommentCreate(Cursor $cur): string
     {
-        $cur->comment_content = Helper::doEncoding((string) $cur->comment_content);
+        $comment_content = is_string($comment_content = $cur->comment_content) ? $comment_content : '';
+
+        $cur->comment_content = Helper::doEncoding($comment_content);
 
         return '';
     }
