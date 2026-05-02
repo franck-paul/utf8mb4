@@ -31,7 +31,7 @@ class BackendBehaviors
     {
         // Cope only with Post and Page editing
         $contexts = ['post', 'page'];
-        if (!in_array($context, $contexts)) {
+        if (!in_array($context, $contexts, true)) {
             return '';
         }
 
@@ -40,7 +40,7 @@ class BackendBehaviors
 
         return
         App::backend()->page()->jsJson('utf8mb4', [
-            'utf8mb4n_notes_only' => $editor === 'dcLegacyEditor' && in_array($syntax, $syntaxes) ? 0 : 1,
+            'utf8mb4n_notes_only' => $editor === 'dcLegacyEditor' && in_array($syntax, $syntaxes, true) ? 0 : 1,
         ]) .
         My::jsLoad('he.js') .
         My::jsLoad('post.js');
