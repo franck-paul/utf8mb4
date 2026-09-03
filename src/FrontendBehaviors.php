@@ -19,9 +19,9 @@ use Dotclear\Database\Cursor;
 
 class FrontendBehaviors
 {
-    public static function publicBeforeCommentCreate(Cursor $cur): string
+    public static function publicBeforeCommentCreate(Cursor $cursor): string
     {
-        $cur->setStrField('comment_content', Helper::doEncoding($cur->strField('comment_content')));
+        $cursor->setStrField('comment_content', Helper::doEncoding($cursor->strField('comment_content')));
 
         return '';
     }
