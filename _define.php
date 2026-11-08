@@ -18,9 +18,9 @@ if (isset($this) && is_object($this) && method_exists($this, 'registerModule') &
         'utf8mb4',
         'UTF-8 mb4 partial support (posts/pages and comments only)',
         'Franck Paul',
-        '5.3',
+        '6.0',
         [
-            'date'        => '2026-08-03T10:15:57+0200',
+            'date'        => '2026-11-08T10:27:27+0100',
             'requires'    => [['core', '2.40']],
             'permissions' => 'My',
             'type'        => 'plugin',
