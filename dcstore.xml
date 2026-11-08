@@ -1,12 +1,12 @@
 <modules xmlns:da="http://dotaddict.org/da/">
   <module id="utf8mb4">
     <name>utf8mb4</name>
-    <version>5.3</version>
+    <version>6.0</version>
     <author>Franck Paul</author>
     <desc>UTF-8 mb4 partial support (posts/pages and comments only)</desc>
-    <date>2026-08-03T10:15:57+0200</date>
-    <file>https://github.com/franck-paul/utf8mb4/releases/download/5.3/plugin-utf8mb4-5.3.zip</file>
-    <da:dcmin>2.36</da:dcmin>
+    <date>2026-11-08T10:27:27+0100</date>
+    <file>https://github.com/franck-paul/utf8mb4/releases/download/6.0/plugin-utf8mb4-6.0.zip</file>
+    <da:dcmin>2.40</da:dcmin>
     <da:details>https://dotclear.org/plugin/detail/utf8mb4</da:details>
     <da:support>https://github.com/franck-paul/utf8mb4</da:support>
   </module>
